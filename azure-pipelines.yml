@@ -8,8 +8,8 @@ pool:
   name: Default
 
 variables:
-  repoUrl: 'https://github.com/souravb-smu/odoo17.git'
-  stagePath: '/home/azureuser/'
+  repoUrl: 'https://github.com/josephsungls/e08g13t99'
+  stagePath: '/home/josephsung/'
   updateScript: '$(stagePath)/deploy-temp/update_code.sh'
   dbName: 'odoo'
   dbUser: 'odoo17'
