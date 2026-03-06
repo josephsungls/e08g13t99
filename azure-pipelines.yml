@@ -77,7 +77,7 @@ stages:
           - task: SSH@0
             displayName: "Sync Code - Production"
             inputs:
-              sshEndpoint: 'ssh-odoo17-production'
+              sshEndpoint: 'ssh-odoo17-prod'
               runOptions: commands
               commands: |
                 set -e
@@ -94,7 +94,7 @@ stages:
           - task: CopyFilesOverSSH@0
             displayName: "Upload odoo.sql.gz to VM"
             inputs:
-              sshEndpoint: 'ssh-odoo17-production'
+              sshEndpoint: 'ssh-odoo17-prod'
               sourceFolder: '$(Agent.TempDirectory)'
               contents: 'odoo.sql.gz'
               targetFolder: '$(stagePath)/deploy-temp'
@@ -103,7 +103,7 @@ stages:
           - task: SSH@0
             displayName: "Uncompress odoo.sql.gz on VM"
             inputs:
-              sshEndpoint: 'ssh-odoo17-production'
+              sshEndpoint: 'ssh-odoo17-prod'
               runOptions: commands
               commands: |
                 set -e
@@ -116,7 +116,7 @@ stages:
           - task: SSH@0
             displayName: "Restore Database - Production"
             inputs:
-              sshEndpoint: 'ssh-odoo17-production'
+              sshEndpoint: 'ssh-odoo17-prod'
               runOptions: commands
               commands: |
                 set -e
@@ -134,7 +134,7 @@ stages:
           - task: SSH@0
             displayName: "Run Update Script - Production"
             inputs:
-              sshEndpoint: 'ssh-odoo17-production'
+              sshEndpoint: 'ssh-odoo17-prod'
               runOptions: commands
               commands: |
                 echo "$(STAGINGUSERPASSWORD)" | sudo -S -p '' chmod +x $(updateScript)
