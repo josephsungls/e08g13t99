@@ -9,7 +9,7 @@ pool:
 
 variables:
   repoUrl: 'https://github.com/josephsungls/e08g13t99'
-  stagePath: '/home/josephsung/'
+  stagePath: '/home/is214/'
   updateScript: '$(stagePath)/deploy-temp/update_code.sh'
   dbName: 'odoo'
   dbUser: 'odoo17'
